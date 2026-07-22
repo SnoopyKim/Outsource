@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Engineering"
+  short_description: "Coordinate evidence-driven multi-agent engineering"
+  default_prompt: "Use $loop-engineering to coordinate this task through independent implementation and verification loops."

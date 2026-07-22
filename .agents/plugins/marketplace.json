@@ -1,0 +1,20 @@
+{
+  "name": "agent-harnesses",
+  "interface": {
+    "displayName": "Agent Harnesses"
+  },
+  "plugins": [
+    {
+      "name": "loop-engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/loop-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

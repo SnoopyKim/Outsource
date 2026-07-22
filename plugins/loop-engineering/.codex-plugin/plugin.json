@@ -1,0 +1,18 @@
+{
+  "name": "loop-engineering",
+  "version": "0.1.0",
+  "description": "Coordinate substantial engineering work through bounded multi-agent verification and repair loops.",
+  "author": {
+    "name": "Loop Engineering Maintainers"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Loop Engineering",
+    "shortDescription": "Evidence-driven multi-agent engineering loops.",
+    "longDescription": "Orchestrate investigation, scoped implementation, independent verification, diagnosis, repair, and final integration without assuming a project or technology stack.",
+    "developerName": "Loop Engineering Maintainers",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use $loop-engineering to coordinate this engineering task through implementation and independent verification."
+  }
+}
