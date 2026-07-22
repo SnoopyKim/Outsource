@@ -36,14 +36,14 @@ Start a new Codex task after installation so the Skill is discovered in a clean 
 
 ## Install from Git
 
-After this repository has a Git remote, replace `owner` with its actual owner:
+Add this repository as a Git-backed Marketplace and install the Plugin:
 
 ```bash
-codex plugin marketplace add owner/codex-loop-engineering --ref main
+codex plugin marketplace add SnoopyKim/codex-loop-engineering --ref main
 codex plugin add loop-engineering@agent-harnesses
 ```
 
-No remote is created or assumed by this repository.
+Source: <https://github.com/SnoopyKim/codex-loop-engineering>
 
 ## Update a local development install
 
