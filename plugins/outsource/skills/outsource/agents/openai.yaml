@@ -1,0 +1,4 @@
+interface:
+  display_name: "Outsource"
+  short_description: "Delegate substantial work to verified delivery"
+  default_prompt: "Use $outsource to take this project from deep interview through verified acceptance."

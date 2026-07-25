@@ -1,0 +1,26 @@
+{
+  "name": "outsource",
+  "version": "0.1.0+codex.20260725090554",
+  "description": "Outsource a Maker's substantial projects to an agent-led process from deep interview through verified acceptance.",
+  "author": {
+    "name": "Outsource Maintainers"
+  },
+  "repository": "https://github.com/SnoopyKim/codex-loop-engineering",
+  "keywords": [
+    "outsourcing",
+    "agent-delivery",
+    "deep-interview",
+    "verification",
+    "self-improvement"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Outsource",
+    "shortDescription": "Outsource substantial work to verified delivery.",
+    "longDescription": "Delegate substantial work to an agent-led delivery process that qualifies the engagement, interviews the Maker, establishes a delivery contract, selects the simplest reliable execution strategy, verifies results, manages feedback, and learns under explicit governance.",
+    "developerName": "Outsource Maintainers",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use $outsource to take this project from deep interview through verified acceptance."
+  }
+}

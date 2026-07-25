@@ -1,79 +1,169 @@
-# codex-loop-engineering
+# Outsource
 
-`loop-engineering` is a stack-independent Codex Plugin for running substantial engineering work as an evidence-driven feedback loop:
+> Outsource helps a Maker turn underspecified intent into an accepted outcome.
+
+**Makers** are solo builders and solopreneurs who create and operate products with AI agents. **Outsource** is a Codex Plugin for the substantial work that should not depend on one lucky prompt: cross-cutting features, risky changes, and long-running projects that need discovery, delivery discipline, verification, feedback, and continuity.
 
 ```text
-understand → investigate → plan → assign → implement → verify
-                                      ↑          ↓
-                                      └─ repair ← diagnose
+Maker intent
+    ↓
+qualify → deep interview → delivery contract → deliver → verify → review
+                         ↑                              │          │
+                         └──────── change ──────────────┘          ↓
+                                                       handoff ← accept
+                                                                  ↓
+                                                                learn
 ```
 
-Codex remains the orchestrator. It owns the completion criteria, gives bounded work contracts to subagents, inspects their changes and evidence, sends failures back for repair, and performs final integration. The Plugin does not add models, permissions, background execution, or external state transfer; it teaches Codex how to use capabilities that the active runtime and user authorization already provide.
+The Maker owns purpose, constraints, meaningful choices, feedback, and acceptance. Outsource owns the missing delivery work: discovering consequential gaps, proposing scope and outputs, designing tests and evidence, selecting an execution strategy, producing the result, and presenting it for judgment.
 
-## When to use it
+Loops, graphs, multi-agent teams, and direct execution are strategies. They are not the goal.
 
-Invoke `$loop-engineering`, or explicitly ask Codex for multi-agent, subagent, team, parallel investigation/implementation/verification, an orchestrator-led workflow, or repeated verify-and-repair work through completion.
+## Engagement modes
 
-Representative uses include:
+Outsource matches process weight to the work:
 
-- Investigate a cross-cutting defect, divide independent module fixes, and verify the integrated behavior.
-- Build a feature across separable components while one owner controls shared files and another independently tests the result.
-- Analyze a failing migration, repair it through bounded validation loops, and escalate if the same failure persists.
-- Coordinate a technology-neutral documentation, configuration, and implementation change with traceable acceptance evidence.
+- **Direct** — small, clear, low-risk requests. Execute with minimal clarification and verify the result.
+- **Scoped** — bounded but ambiguous, cross-cutting, or meaningfully risky work. Run a focused interview and confirm a compact Delivery Contract.
+- **Project** — large, long-running, multi-milestone, externally dependent, or difficult-to-reverse work. Use durable state, repeated Maker reviews, change management, acceptance, and handoff.
 
-Do not form a team automatically for a simple question, explanation, tiny single-file edit, or other task where delegation would cost more than it helps. If the user explicitly invokes the Skill for a small task, preserve the verification discipline but use the single-agent fallback.
+Outsource starts with the simplest reliable mode and increases structure only when the evidence justifies it.
+
+## Deep Interview
+
+The Maker is not expected to arrive with a complete specification, implementation plan, output format, and test suite.
+
+Outsource first inspects the available project context, then adaptively interviews for information that could materially change:
+
+- the desired outcome and why it matters;
+- current product, users, workflow, and constraints;
+- scope and explicit non-goals;
+- meaningful preferences and authority boundaries;
+- damaging failure modes and required confidence;
+- operations, maintenance, launch, and handoff;
+- assumptions that need investigation or a small experiment.
+
+The interview ends when Outsource can make a responsible proposal—not when it has exhausted a fixed questionnaire or removed every uncertainty.
+
+## Delivery Contract
+
+Scoped and Project work produces a shared, versioned Delivery Contract containing:
+
+- intended outcome and current context;
+- scope and non-goals;
+- constraints and approval points;
+- recommended approach and alternatives;
+- deliverables and milestones;
+- Outsource-proposed acceptance criteria, tests, and evidence;
+- assumptions, risks, open decisions, and change policy.
+
+Technical execution, verification, and Maker acceptance are kept distinct:
+
+```text
+EXECUTED  → the planned result exists
+VERIFIED  → required evidence passes
+ACCEPTED  → the Maker reviews and accepts it
+```
+
+## Execution strategies
+
+Outsource chooses after understanding the work:
+
+- direct execution for simple tasks;
+- a sequential verification loop for coupled work;
+- parallel agents for independent scopes with exclusive ownership;
+- graph orchestration when branching, joins, permissions, or recovery paths must be explicit;
+- human gates for consequential external or hard-to-reverse actions.
+
+One Delivery Orchestrator remains accountable for the contract, authority, state, integration, evidence, and final claims. Host-native agents, worktrees, goals, schedulers, and permission controls are used when available rather than reimplemented.
+
+## Governed self-improvement
+
+Outsource can improve while it is used, but it does not silently rewrite itself.
+
+Learning is separated into:
+
+1. **Project memory** — facts and decisions that apply to one project.
+2. **Maker Profile** — confirmed reusable Maker preferences and operating constraints.
+3. **Outsource protocol** — reusable skills, interview rules, templates, scripts, adapters, and evaluations.
+
+Reusable protocol changes follow:
+
+```text
+observe → diagnose → propose → Maker approval → experiment → verify
+                    ↑                                │
+                    └──────── rollback ←─────────────┤
+                                                     ↓
+                                                   adopt
+```
+
+Changes to Outsource source require an inspectable proposal, explicit Maker authorization, bounded edits, regression checks, and an adopt-or-rollback decision. Private learning belongs in a Maker-controlled ignored directory; secrets and raw private customer data are never learned as reusable preferences.
+
+## Current v0.1
+
+The `outsource` Plugin currently provides one primary `$outsource` Skill with:
+
+- engagement qualification;
+- Deep Interview guidance and readiness rules;
+- a canonical Delivery Contract;
+- an outer project-delivery lifecycle;
+- strategy selection for direct, loop, parallel, graph, and human-gated work;
+- execution ownership, verification, diagnosis, and repair rules;
+- feedback, change request, acceptance, and handoff semantics;
+- a governed learning protocol for project memory, Maker Profile, and Outsource itself.
+
+This is a protocol-first version. It does not yet add a database, background daemon, visual project dashboard, cost telemetry, or cross-host state service.
+
+The previous `loop-engineering` Plugin remains in this repository as a compatibility and focused execution strategy during the Outsource transition.
 
 ## Install locally
 
-From any machine with this repository available, add its repo-local Marketplace and install the Plugin:
+Add this repository's local Marketplace, then install Outsource:
 
 ```bash
 codex plugin marketplace add ./path/to/codex-loop-engineering
-codex plugin add loop-engineering@agent-harnesses
+codex plugin add outsource@agent-harnesses
 ```
 
-Start a new Codex task after installation so the Skill is discovered in a clean context.
+Start a new Codex task after installation so `$outsource` is discovered in a clean context.
 
 ## Install from Git
 
-Add this repository as a Git-backed Marketplace and install the Plugin:
-
 ```bash
 codex plugin marketplace add SnoopyKim/codex-loop-engineering --ref main
-codex plugin add loop-engineering@agent-harnesses
+codex plugin add outsource@agent-harnesses
 ```
 
 Source: <https://github.com/SnoopyKim/codex-loop-engineering>
 
+The repository URL retains its historical name for now; the primary Plugin and product name are Outsource.
+
 ## Update a local development install
 
-After changing the Plugin itself, use the `plugin-creator` cachebuster helper, reinstall from the already registered local Marketplace, and then validate it in a new Codex task:
+After changing Outsource, update its cachebuster, reinstall it from the registered Marketplace, and test it in a new Codex task:
 
 ```bash
-python3 path/to/plugin-creator/scripts/update_plugin_cachebuster.py ./plugins/loop-engineering
-codex plugin add loop-engineering@agent-harnesses
+python3 path/to/plugin-creator/scripts/update_plugin_cachebuster.py ./plugins/outsource
+codex plugin add outsource@agent-harnesses
 ```
 
-Do not hand-edit the Marketplace file to force a refresh.
+Do not hand-edit the Marketplace file or an installed plugin cache to force an update.
 
-## Update a Git install
+## Project principles
 
-Refresh the configured Git Marketplace snapshot, reinstall the Plugin, and then validate it in a new Codex task:
-
-```bash
-codex plugin marketplace upgrade agent-harnesses
-codex plugin add loop-engineering@agent-harnesses
-```
-
-## Operating model
-
-The Skill discovers available agent and coordination capabilities at runtime, sizes the team to the useful work and live concurrency, and assigns non-overlapping file ownership before parallel writes. Investigators are read-only by default, implementers stay inside their declared scope, and verifiers independently inspect source artifacts and executed checks. Verification failures move through diagnosis and repair, normally for no more than three cycles unless the user sets another limit. Reaching the limit never counts as success.
-
-When subagents are unavailable, disallowed, or wasteful, Codex executes the same state machine sequentially and explicitly separates implementation from a fresh verification pass.
+- Optimize for the Maker's accepted outcome, not agent activity.
+- Ask only questions whose answers could materially change delivery.
+- Let Outsource propose implementation and testing instead of delegating specification work back to the Maker.
+- Preserve decisions, assumptions, changes, evidence, and next actions needed to resume.
+- Use the simplest execution topology that can deliver reliably.
+- Separate contract defects, misunderstandings, new requests, preferences, and next-phase ideas.
+- Treat passing tests as evidence, not as Maker acceptance.
+- Never broaden permissions, external actions, or self-modification authority implicitly.
 
 ## Security and permissions
 
-- Installation grants no additional permissions and bypasses no system or user policy.
-- The active machine's Codex settings determine available tools, models, concurrency, approvals, and sandbox boundaries.
-- The Skill never promises automatic approvals, unlimited background work, cross-machine live-session transfer, hard per-agent token or time limits, commits, pushes, deployments, or external changes without authorization.
-- Keep secrets in the environment or an approved secret store; this repository contains no credentials or machine-specific paths.
+- Installation grants no additional permissions and bypasses no system or Maker policy.
+- The active runtime determines tools, models, concurrency, approvals, and sandbox boundaries.
+- Outsource does not promise automatic approvals, unlimited background work, cross-machine state transfer, hard token limits, commits, pushes, deployments, purchases, or outbound communication without authorization.
+- Keep secrets in the environment or an approved secret store.
+- Store private Maker research and learning in an ignored or otherwise approved private location.
