@@ -1,0 +1,19 @@
+{
+  "name": "outsource-dev",
+  "description": "Development marketplace for the Outsource plugin.",
+  "owner": {
+    "name": "SnoopyDev"
+  },
+  "plugins": [
+    {
+      "name": "outsource",
+      "description": "Take substantial projects from deep interview through verified acceptance.",
+      "version": "0.1.0+codex.20260726044559",
+      "source": "./plugins/outsource",
+      "author": {
+        "name": "Outsource Maintainers"
+      },
+      "license": "MIT"
+    }
+  ]
+}

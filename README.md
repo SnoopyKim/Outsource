@@ -121,7 +121,7 @@ The previous `loop-engineering` Plugin remains in this repository as a compatibi
 Add this repository's local Marketplace, then install Outsource:
 
 ```bash
-codex plugin marketplace add ./path/to/codex-loop-engineering
+codex plugin marketplace add ./path/to/Outsource
 codex plugin add outsource@agent-harnesses
 ```
 
@@ -130,13 +130,42 @@ Start a new Codex task after installation so `$outsource` is discovered in a cle
 ## Install from Git
 
 ```bash
-codex plugin marketplace add SnoopyKim/codex-loop-engineering --ref main
+codex plugin marketplace add SnoopyKim/Outsource --ref main
 codex plugin add outsource@agent-harnesses
 ```
 
-Source: <https://github.com/SnoopyKim/codex-loop-engineering>
+## Install in Claude Code
 
-The repository URL retains its historical name for now; the primary Plugin and product name are Outsource.
+From a local checkout:
+
+```bash
+claude plugin marketplace add ./path/to/Outsource
+claude plugin install outsource@outsource-dev
+```
+
+The same repository now carries native Codex and Claude Code manifests. Both
+hosts load the shared `plugins/outsource/skills/` source; no skill copy or
+symlink is needed. Start a new Codex task or restart Claude Code after
+installation.
+
+Source: <https://github.com/SnoopyKim/Outsource>
+
+## Programmatic local onboarding
+
+Use the repository helper to validate, install, update, inspect, or remove the
+plugin in either host:
+
+```bash
+python3 scripts/plugin_setup.py --host all doctor
+python3 scripts/plugin_setup.py --host codex install
+python3 scripts/plugin_setup.py --host claude install
+python3 scripts/plugin_setup.py --host all status
+```
+
+The future `SnoopyKim/marketplace` catalog will expose
+`outsource@snoopydev` to both hosts, so end users only need to add one
+marketplace and install the plugin. The local `agent-harnesses` and
+`outsource-dev` marketplace names remain development identifiers.
 
 ## Update a local development install
 

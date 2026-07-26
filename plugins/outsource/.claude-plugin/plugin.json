@@ -1,0 +1,17 @@
+{
+  "name": "outsource",
+  "version": "0.1.0+codex.20260726044559",
+  "description": "Take substantial projects from deep interview through verified acceptance.",
+  "author": {
+    "name": "Outsource Maintainers"
+  },
+  "repository": "https://github.com/SnoopyKim/Outsource",
+  "license": "MIT",
+  "keywords": [
+    "outsourcing",
+    "agent-delivery",
+    "deep-interview",
+    "verification",
+    "self-improvement"
+  ]
+}
